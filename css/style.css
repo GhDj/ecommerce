@@ -1,0 +1,402 @@
+body {
+    overflow-x: hidden;
+}
+
+
+.navbar-default {
+    margin-bottom: 0 !important;
+    background-color: #fff;
+    border-color: #ffffff;
+    border: 0 !important;
+}
+
+.carousel-indicators .active {
+    background-color: #b42922 ;
+    border-color: #b42922;
+    width: 22px;
+    height: 22px;
+}
+
+.carousel-indicators li {
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+
+}
+
+/*************** Menu ***********/
+
+#top-menu-toggle span{
+    font-size: 2.9em !important;
+    color: #000 !important;
+    padding: 35% 0 !important;
+}
+
+
+#wrapper-page.toggledm {
+   /* padding-left: 250px;*/
+}
+
+#menubar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper-page.toggledm #menubar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper-page.toggledm #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+.menubar-nav li a img {
+    margin: 3% 0;
+}
+
+/* Sidebar Styles */
+
+.menubar-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menubar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+    display: inline-table;
+    width: 23%;
+    padding: 2% 3%;
+}
+
+
+
+span.menu-item {
+    color: #b42922;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.sous-menu li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    font-size: small;
+}
+
+#panier-link {
+    background: #b42922;
+}
+
+.sous-menu li:hover {
+    color: black;
+}
+
+.sous-menu {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.menubar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.menubar-nav li a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.menubar-nav li a:active,
+.menubar-nav li a:focus {
+    text-decoration: none;
+}
+
+.menubar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.menubar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.menubar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper-page {
+        padding-left: 0;
+    }
+
+    #wrapper-page.toggledm {
+       /* padding-left: 250px;*/
+    }
+
+    #menubar-wrapper {
+        width: 0;
+    }
+
+    #wrapper-page.toggledm #menubar-wrapper {
+       /* width: 250px;*/
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper-page.toggledm #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+/************** Side bar *************/
+/* Toggle Styles */
+
+#wrapper-page {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper-page.toggledm {
+    /*padding-left: 250px;*/
+}
+
+#menubar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #e9e9ec;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper-page.toggledm #menubar-wrapper {
+    width: 100%;
+    height: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper-page.toggledm #page-content-wrapper {
+    position: absolute;
+    /*margin-right: -250px;*/
+}
+
+/* Sidebar Styles */
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 0;
+    }
+
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+
+    #sidebar-wrapper {
+        width: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+/************ End sidebar ***********/
+
+.cat-container-accueil {
+    margin-top:50px;
+    padding: 0;
+}
+
+.cat-accueil {
+    padding: 0 !important;
+    width: 47.5%;
+    /*background-color: #000000;*/
+
+}
+
+.cat-accueil img {
+    width: 100%;
+}
+
+.cat-accueil .text {
+    position:relative;
+    bottom:30px;
+    left:0px;
+    visibility:hidden;
+
+}
+
+.image {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cat-accueil:hover .image{
+    opacity: 0.7;
+}
+
+.cat-accueil:hover .text {
+    visibility:visible;
+    opacity: 1;
+    color: #fff;
+    padding-left: 2%;
+}
+
+#categorie5 .text {
+    position:relative;
+    bottom: 580px;
+    left: 40%;
+    visibility: hidden;
+    font-size: 3em;
+    color: #fff;
+}
+
+#categorie5 img {
+    width: 100%;
+}
+
+#categorie5:hover .text {
+    visibility:visible;
+    opacity: 1 !important;
+}
+
+#categorie5:hover {
+    opacity: 0.7;
+}

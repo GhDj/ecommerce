@@ -9,12 +9,19 @@
 ob_start();
 session_start();
 include_once "../db.php";
-$id = $_SESSION['user'];
-$v = mysqli_query($db,"SELECT email,role FROM users WHERE id=$id");
-if ($v){
-    $v = mysqli_fetch_array($v);
-    //print_r($v);
-    if ($v['role'] != 0)
-        header("Location: ../index.php");
+if ($_SESSION['user'] != "") {
+    $id = $_SESSION['user'];
+
+    $v = mysqli_query($db,"SELECT email,role FROM users WHERE id=$id");
+    if ($v){
+        $v = mysqli_fetch_array($v);
+        //print_r($v);
+        if ($v['role'] != 0)
+            header("Location: ../index.php");
+    }
+} else
+{
+    header("Location:../register.php");
 }
+
 ?>

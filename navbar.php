@@ -18,26 +18,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Espace Maison</a>
+            <a href="#menu-toggle" class="" id="top-menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Accueil</a></li>
-                <li><a href="#">Boutique</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><img src="img/user.png" alt=""></a></li>
+                <li id="panier-link"><a href="#"><img src="img/panier.png" alt=""></a></li>
                 <?php
-                if ($userRow['lname'] != "") {
+                /*if ($userRow['lname'] != "") {
 
-
+*/
                     ?>
 
 
-                    <li class="dropdown">
+                <!--    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">
-                            <span class="glyphicon glyphicon-user"></span>&nbsp;Hi' <?php echo $userRow['lname']; ?>
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;Hi' <?php //echo $userRow['lname']; ?>
                             &nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="deconnexion.php?deconnexion"><span
@@ -46,11 +45,11 @@
                     </li>
 
                     <?php
-                } else {
+             //   } else {
                     ?>
                     <li><a href="register.php">Connexion/S'inscrire</a></li>
                     <?php
-                }
+              //  }-->
                 ?>
 
             </ul>
