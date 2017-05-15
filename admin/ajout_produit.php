@@ -54,7 +54,7 @@ if ( isset($_POST['btn-ajout']) ) {
         $error = true;
         $descriptionError = "Le description doit être composé des caractéres alphabétiques.";
     }
-/***** Image upload ***/
+    /***** Image upload ***/
 
     $target_dir = "./img/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -98,7 +98,7 @@ if ( isset($_POST['btn-ajout']) ) {
 // if everything is ok, try to upload file
     } else {
         $temp = explode(".", $_FILES["image"]["name"]);
-        $image = $name.$ref. '.' . end($temp);
+        $image = $name. '.' . end($temp);
         if (move_uploaded_file($_FILES["image"]["tmp_name"], "../img/".$image)) {
             echo "The file ". $image. " has been uploaded.";
         } else {
@@ -107,8 +107,7 @@ if ( isset($_POST['btn-ajout']) ) {
         }
     }
 
-/******** End image upload ***/
-
+    /******** End image upload ***/
     if( !$error ) {
 
         $query = "INSERT INTO produits(name,ref,prix,description,image, categorie) VALUES('$name','$ref','$prix','$description','$image', $categorie)";
@@ -254,7 +253,15 @@ if ( isset($_POST['btn-ajout']) ) {
             <div class="input-group">
                 <select name="categorie" id="categorie-select" class="form-control">
                     <option value="0">Non classé</option>
-                    <option value="1">Catégorie 1</option>
+                    <?php
+                    $cat = mysqli_query($db,"SELECT * FROM categories");
+                    while ($c = mysqli_fetch_assoc($cat))
+                    {
+                        ?>
+                        <option value="<?php echo $c['id'] ?>"><?php echo $c['nom']; ?></option>
+                    <?php
+                    }
+                    ?>
                 </select>
             </div>
 

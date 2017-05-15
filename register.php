@@ -173,6 +173,7 @@ if( isset($_POST['btn-login']) ) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Connexion</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"  />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
@@ -336,7 +337,9 @@ include_once "navbar.php";
     </div>
 
 </div>
-
+<?php
+include_once "footer.php";
+?>
 </body>
 </html>
 <?php ob_end_flush(); ?>

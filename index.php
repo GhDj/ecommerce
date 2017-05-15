@@ -37,6 +37,7 @@ if (!$res) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Bienvenue - <?php echo $userRow['fname']; ?></title>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"  />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
@@ -173,6 +174,9 @@ include_once "navbar.php";
 
 </div>
 
+<?php
+include_once "footer.php";
+?>
 <script src="js/jquery-1.11.3-jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>

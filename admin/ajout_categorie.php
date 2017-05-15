@@ -46,9 +46,66 @@ if ( isset($_POST['btn-ajout']) ) {
         $descriptionError = "Le description doit être composé des caractéres alphabétiques.";
     }
 
+    /***** Image upload ***/
+
+    $target_dir = "./img/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+    if(isset($_POST["btn-ajout'"])) {
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if($check !== false) {
+            echo "Le fichier n'est pas une image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+            die();
+        }
+    }
+// Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Ce fichier existe déjà.";
+        $uploadOk = 0;
+        die();
+    }
+// Check file size
+    if ($_FILES["image"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+        die();
+    }
+// Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "GIF"  ) {
+        echo "Le fichier doit etre JPG, JPEG, PNG & GIF.";
+        $uploadOk = 0;
+        die();
+
+    }
+// Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+    } else {
+        $temp = explode(".", $_FILES["image"]["name"]);
+        $image = $name. '.' . end($temp);
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], "../img/".$image)) {
+            echo "The file ". $image. " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+            die();
+        }
+    }
+
+    /******** End image upload ***/
+
+
+
     if( !$error ) {
 
-        $query = "INSERT INTO categories(nom,description) VALUES('$name','$description')";
+        $query = "INSERT INTO categories(nom,description,image) VALUES('$name','$description','$image')";
         $res = mysqli_query($db,$query);
 
         if ($res) {
@@ -139,7 +196,7 @@ if ( isset($_POST['btn-ajout']) ) {
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text" name="name" class="form-control" placeholder="Nom produit" maxlength="50"  />
+                    <input type="text" name="name" class="form-control" placeholder="Nom catégorie" maxlength="50"  />
                 </div>
                 <?php if (isset($nameError)){
                     ?>
@@ -166,7 +223,13 @@ if ( isset($_POST['btn-ajout']) ) {
             </div>
 
 
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="image">Image : </label>
+                    <input type="file" name="image" class="form-control">
 
+                </div>
+            </div>
 
             <div class="form-group">
                 <hr />

@@ -25,7 +25,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><img src="img/user.png" alt=""></a></li>
-                <li id="panier-link"><a href="#"><img src="img/panier.png" alt=""></a></li>
+                <li id="panier-link"><a href="panier.php"><img src="img/panier.png" alt=""></a></li>
                 <?php
                 /*if ($userRow['lname'] != "") {
 
