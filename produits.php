@@ -59,55 +59,9 @@ include_once "navbar.php";
 
 
     <div id="menubar-wrapper">
-        <ul class="menubar-nav">
-
-            <li>
-                <a href="index.php">
-                    <img src="img/produits.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">PRODUITS</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">TOUS LES PRODUITS</li></a>
-                    <li><a href="#">FOOD STORAGE BOX</li></a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_produit.php">
-                    <img src="img/promotions.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">PROMOTIONS</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">NOUVEAUTES</li></a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_categorie.php">
-                    <img src="img/catalogues.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">CATALOGUES</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">CATALOGUE 1</li></a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_user.php">
-                    <img src="img/contact.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">CONTACT</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">QUI SOMME NOUS?</li></a>
-                </ul>
-            </li>
-
-        </ul>
+        <?php
+        include_once "menu.php";
+        ?>
     </div>
 
 
@@ -140,9 +94,11 @@ include_once "navbar.php";
                     ?>
                     <div class="col-sm-3">
                         <div class="produit-container">
+                            <a href="single-produit.php?id=<?php echo $p['id']; ?>">
                             <img src="img/<?php echo $p['image']; ?>" alt="" class="img-responsive">
                             <h4><?php echo $p['name']; ?></h4>
                             <h4><?php echo $p['prix']; ?></h4>
+                            </a>
                         </div>
                     </div>
             <?php

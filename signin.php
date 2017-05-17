@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: ghdj9
  * Date: 15/05/2017
- * Time: 06:53
+ * Time: 06:33
  */
 
 ob_start();
@@ -175,119 +175,99 @@ if( isset($_POST['btn-login']) ) {
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
-<body>
+<body class="page">
 
 <?php
 include_once "navbar.php";
 ?>
-
-<div id="wrapper-page">
-
-
-    <div id="menubar-wrapper">
-        <?php
-        include_once "menu.php";
-        ?>
-    </div>
 <div class="container">
 
     <div class="container cat-container-accueil">
         <div class="row">
             <div class="col-sm-12">
+                <div class="col-sm-12">
 
-                <div id="register-form">
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+                    <div class="row" >
+                        <div id="login-form" class="col-sm-6">
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
-                        <div class="col-md-12">
+                                <div class="col-md-12" style="border-right: 2px solid #000;">
 
-                            <div class="form-group">
-                                <h2 class="">Inscription</h2>
-                            </div>
-
-                            <div class="form-group">
-                                <hr />
-                            </div>
-
-                            <?php
-                            if ( isset($errMSG) ) {
-
-                                ?>
-                                <div class="form-group">
-                                    <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
-                                        <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+                                    <div class="form-group">
+                                        <h2 class="">IDENTIFIER.</h2>
                                     </div>
-                                </div>
-                                <?php
-                            }
-                            ?>
 
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label for="lname">Nom</label>
-                                    <input type="text" name="lname" class="form-control" placeholder="Nom" maxlength="50"  />
-                                </div>
-                                <?php if (isset($lnameError)){
-                                    ?>
+                                    <div class="form-group">
+                                        <hr />
+                                    </div>
 
-                                    <span class="text-danger"><?php echo $lnameError; ?></span>
                                     <?php
-                                }
-                                ?>
+                                    if ( isset($errMSGlogin) ) {
 
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label for="fname">Prenom</label>
-                                    <input type="text" name="fname" class="form-control" placeholder="Prenom" maxlength="50"/>
-                                </div>
-                                <?php if (isset($fnameError)){
+                                        ?>
+                                        <div class="form-group">
+                                            <div class="alert alert-danger">
+                                                <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSGlogin; ?>
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
                                     ?>
-                                    <span class="text-danger"><?php echo $fnameError; ?></span>
-                                <?php } ?>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label for="email">Adresse Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Email" maxlength="40"/>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="emaillogin">*Adresse Email</label>
+                                            <input type="email" name="emaillogin" class="form-control" placeholder="Email"/>
+                                        </div>
+                                        <?php if (isset($emailErrorlogin)) { ?>
+                                            <span class="text-danger"><?php echo $emailErrorlogin; ?></span>
+                                        <?php } ?>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="passlogin">*Mot de passe</label>
+                                            <input type="password" name="passlogin" class="form-control" placeholder="Mot de passe" />
+                                        </div>
+                                        <?php if (isset($passErrorlogin)) {?>
+                                            <span class="text-danger"><?php echo $passErrorlogin; ?></span>
+                                        <?php } ?>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <hr />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-connexion" name="btn-login">Connexion</button>
+                                    </div>
+
+
+
+
+
                                 </div>
-                                <?php if (isset($emailError)){
-                                    ?>
-                                    <span class="text-danger"><?php echo $emailError; ?></span>
-                                <?php } ?>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label for="pass">Mot de passe</label>
-                                    <input type="password" name="pass" class="form-control" placeholder="Mot de passe" maxlength="15" />
-                                </div>
-                                <?php if (isset($passError)){
-                                    ?>
-                                    <span class="text-danger"><?php echo $passError; ?></span>
-
-                                <?php } ?>
-                            </div>
-
-                            <div class="form-group">
-                                <hr />
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-connexion" name="btn-signup">S'inscrire</button>
-                            </div>
-
-
-
-
-
+                            </form>
                         </div>
 
-                    </form>
-                </div>
+                        <div class="col-sm-6">
 
-            </div>
+                            <div class="form-group">
+                                <h2>CREER UN COMPTE </h2>
+                            </div>
+
+
+                            <div class="form-group">
+                                <hr />
+                            </div>
+                            <p>En créant un compte auprès de notre magasin, vous pourrez passer rapidement le processus de caisse, stocker plusieurs adresses d'expédition, afficher et suivre vos commandes dans votre compte et plus encore.</p>
+                            <br>
+                            <a href="inscription.php" class="btn-connexion">Créer Compte</a>
+                        </div>
+                    </div>
+                </div>
+           </div>
 
 
 
@@ -298,20 +278,10 @@ include_once "navbar.php";
 
 
 
-</div></div>
+</div>
 <?php
 include_once "footer.php";
 ?>
-<script src="js/jquery-1.11.3-jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-    <script>
-    $("#top-menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper-page").toggleClass("toggledm");
-    });
-</script>
-
 </body>
 </html>
 <?php ob_end_flush(); ?>

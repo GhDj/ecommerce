@@ -82,55 +82,9 @@ include_once "navbar.php";
 
 
     <div id="menubar-wrapper">
-        <ul class="menubar-nav">
-
-            <li>
-                <a href="index.php">
-                    <img src="img/produits.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">PRODUITS</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">TOUS LES PRODUITS</li></a>
-                    <li><a href="#">FOOD STORAGE BOX</li></a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_produit.php">
-                    <img src="img/promotions.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">PROMOTIONS</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">NOUVEAUTES</li></a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_categorie.php">
-                    <img src="img/catalogues.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">CATALOGUES</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">CATALOGUE 1</li></a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_user.php">
-                    <img src="img/contact.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">CONTACT</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">QUI SOMME NOUS?</li></a>
-                </ul>
-            </li>
-
-        </ul>
+        <?php
+        include_once "menu.php";
+        ?>
     </div>
 
 
@@ -139,7 +93,7 @@ include_once "navbar.php";
     <div class="container cat-container-accueil">
         <div class="row">
             <div class="col-sm-12">
-                <div class="col-sm-9">
+                <div class="col-sm-9" style="padding-right: 35px;">
                     <div class="row">
                         <div class="col-sm-3 step active-step"><a href="panier.php">01 PANIER</a> </div>
                         <div class="col-sm-3 step "><a href="register.php">02 IDENTIFICATION</a></div>

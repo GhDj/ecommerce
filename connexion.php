@@ -191,11 +191,11 @@ include_once "navbar.php";
                         <div class="col-sm-3 step "><a href="panier.php">03 LIVRAISON</a></div>
                         <div class="col-sm-3 step "><a href="panier.php">04 PAIEMENT</a></div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-top: 30px;">
                         <div id="login-form" class="col-sm-6">
                             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
-                                <div class="col-md-12">
+                                <div class="col-md-12" style="border-right: 2px solid #000;">
 
                                     <div class="form-group">
                                         <h2 class="">IDENTIFIER.</h2>
@@ -256,7 +256,15 @@ include_once "navbar.php";
                         </div>
 
                         <div class="col-sm-6">
-                            <h2>CREER UN COMPTE </h2>
+
+                            <div class="form-group">
+                                <h2>CREER UN COMPTE </h2>
+                            </div>
+
+
+                            <div class="form-group">
+                                <hr />
+                            </div>
                             <p>En créant un compte auprès de notre magasin, vous pourrez passer rapidement le processus de caisse, stocker plusieurs adresses d'expédition, afficher et suivre vos commandes dans votre compte et plus encore.</p>
                             <br>
                             <a href="inscription.php" class="btn-connexion">Créer Compte</a>

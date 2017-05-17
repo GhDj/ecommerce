@@ -10,15 +10,23 @@
 
 
 <nav class="navbar navbar-default">
-    <div class="container">
+    <div class="">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="#menu-toggle" class="" id="top-menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+            <div style="width: 20%; margin: 0 !important; display: inline-block;">
+            <img src="img/logo.png" alt="" class="img-responsive">
+        </div>
+
+            <div style="display: inline-block; position: relative;top: -15px;">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#menu-toggle" class="" id="top-menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+
+            </div>
+
 
         </div>
         <div id="navbar" class="navbar-collapse collapse">

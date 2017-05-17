@@ -53,61 +53,9 @@ include_once "navbar.php";
 
 
     <div id="menubar-wrapper">
-        <ul class="menubar-nav">
-
-            <li>
-                <a href="index.php">
-                    <img src="img/produits.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">PRODUITS</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">TOUS LES PRODUITS</li>
-                    </a>
-                    <li><a href="#">FOOD STORAGE BOX</li>
-                    </a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_produit.php">
-                    <img src="img/promotions.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">PROMOTIONS</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">NOUVEAUTES</li>
-                    </a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_categorie.php">
-                    <img src="img/catalogues.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">CATALOGUES</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">CATALOGUE 1</li>
-                    </a>
-                </ul>
-            </li>
-            <li>
-                <a href="list_user.php">
-                    <img src="img/contact.png" alt="">
-                </a>
-                <a href="index.php">
-                    <span class="menu-item">CONTACT</span>
-                </a>
-                <ul class="sous-menu">
-                    <li><a href="#">QUI SOMME NOUS?</li>
-                    </a>
-                </ul>
-            </li>
-
-        </ul>
-    </div>
+        <?php
+        include_once "menu.php";
+        ?> </div>
 
 
     <div class="container cat-container-accueil">
@@ -126,7 +74,7 @@ include_once "navbar.php";
                             <h3><?php echo $p['description']; ?></h3>
 
                             Quantité :
-                            <div class="input-group col-sm-3">
+                            <div class="input-group col-sm-3" style="width: 25%;">
           <span class="input-group-btn">
               <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus"
                       data-field="quant[1]">
@@ -136,7 +84,7 @@ include_once "navbar.php";
                                 <input type="hidden" name="qty" value="<?php echo $p['id']; ?>" id="id">
                                 <input type="hidden" name="ob" value='<?php echo json_encode($p); ?>' id="ob">
 
-                                <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1"
+                                <input type="text" name="quant[1]" class="input-number" value="1" min="1"
                                        max="10" id="qty">
                                 <span class="input-group-btn">
               <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
